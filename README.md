@@ -1,114 +1,91 @@
-![](UTA-DataScience-Logo.png)
+![UTA-DataScience-Logo](https://user-images.githubusercontent.com/98781538/226424191-8cadd40f-3610-4ed5-93b1-9e9072098975.png)
 
-# Project Title
 
-* **One Sentence Summary** Ex: This repository holds an attempt to apply LSTMs to Stock Market using data from
-"Get Rich" Kaggle challenge (provide link). 
+# Patient Clustering for Healthcare Efficiency
+
+* **Summary**: This repository holds my attempt apply a clustering algorithm (K-means) to Hospital patient discharge data directly from New York's Statewide Planning and Research Cooperative System (SPARCS).
 
 ## Overview
 
-* This section could contain a short paragraph which include the following:
-  * **Definition of the tasks / challenge**  Ex: The task, as defined by the Kaggle challenge is to use a time series of 12 features, sampled daily for 1 month, to predict the next day's price of a stock.
-  * **Your approach** Ex: The approach in this repository formulates the problem as regression task, using deep recurrent neural networks as the model with the full time series of features as input. We compared the performance of 3 different network architectures.
-  * **Summary of the performance achieved** Ex: Our best model was able to predict the next day stock price within 23%, 90% of the time. At the time of writing, the best performance on Kaggle of this metric is 18%.
+  * **Definition of the tasks / challenge**: The task is to use a the N.Y. SPARCS discharge dataset, which contains detailed information on up to 34 patient attributes, as a base to apply a K-means clustering algorithm and provide "data discovery" to better identify groups or "clusters" within the dataset for better organization and clarity of the types of patients.
+  * **My approach** The approach in this repository formulates the problem as a discovery task, comparing patient attributes, gathering relevant information and ultimately running a clustering algorithm on the dataset.
+  * **Summary of the performance achieved**: N/A
 
 ## Summary of Workdone
-
-Include only the sections that are relevant an appropriate.
 
 ### Data
 
 * Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+  * Type: 
+    * Input: CSV file with Patient discharge attributes, specifically pertaining to health and patient condition (ie. Gender, Race, Diagnosis, Age group, Risk of mortality, etc. vs cost of charges, hospital county, facility ID, etc.)
+  * Size: 930MB
+  * Instances: 2.54 million instances for clustering w/ 34 attributes per individual
 
 #### Preprocessing / Clean up
-
-* Describe any manipulations you performed to the data.
+*  Multiple missing/null values for variety of attributes. I used Pandas to create dataframes, remove any null instances and ultimately clean the dataset.
+*  Group of columns that were deemed irrelevant to project were dropped including 'Operating Certficiate Number', 'Payment Typology(s)', 'Facility ID', etc.
+*  Attributes listed as "objects" instead of strings, integers, floats, etc. Used Pandas library to modify columns/attributes into appropriate form and then plotted values via histograms.
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+![LengthofStay](https://user-images.githubusercontent.com/98781538/226444439-c157c899-ae50-4d28-9ee3-54003e7709ad.png)
+* One of the most relevant metrics to determine where individuals are clustered into is the amount of time they spent in the hospital. Here, we observe the frequency of instances (y-axis) based on the amount of days stayed (x-days). For our dataset, the vast majority of individuals spent 20 days or less as patients. Only a marginal amount were beyond that.
+
+![Plotbyage](https://user-images.githubusercontent.com/98781538/226447271-6ca52745-9133-41b4-b430-f0a6cb040633.png)
+* This plot provides a summary of which age ranges had the highest frequency in our dataset. Not surprisingly, the frequency of hospitalization increased as age increased, starting from the age of 30 to 70 and upwards. The least hospitalized group (lowest frequency) was 18-29 years of age group. (Note: Group 0-17 has higher hospitaliztion than 18-29).
+
+
 
 ### Problem Formulation
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
-
-### Training
-
-* Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+* Defined:
+  * Input: Patient Discharge Attributes, specifically pertaining to health and patient condition (ie. Gender, Race, Diagnosis, Age group, Risk of mortality, etc. VS. Cost of charges, hospital county, facility ID, etc.)
+  * Output: Groupings of individual patient types
+  * Models: N/A
 
 ### Performance Comparison
 
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+* N/A
 
 ### Conclusions
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
+* N/A
 
 ### Future Work
 
-* What would be the next thing that you would try.
-* What are some other studies that can be done starting from here.
+* N/A
 
 ## How to reproduce results
 
-* In this section, provide instructions at least one of the following:
-   * Reproduce your results fully, including training.
-   * Apply this package to other data. For example, how to use the model you trained.
-   * Use this package to perform their own study.
-* Also describe what resources to use for this package, if appropirate. For example, point them to Collab and TPUs.
+* N/A
 
 ### Overview of files in repository
 
 * Describe the directory structure, if any.
 * List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
-
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+* N/A
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
+* N/A
 
 ### Data
 
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
+* Download link: https://health.data.ny.gov/api/views/u4ud-w55t/rows.csv?accessType=DOWNLOAD&bom=true&format=true
+* CSV file will have attributes uploaded into Jupyter Notebook as "objects". Optional to change data type option on import and adjust values manually from there.
+* Dropped multiple columns via DataFrame manipulation using Pandas functions.
 
 ### Training
 
-* Describe how to train the model
+* N/A
 
 #### Performance Evaluation
 
-* Describe how to run the performance evaluation.
+* N/A
 
 
 ## Citations
 
-* Provide any references.
+* Previous Work: [A system for exploring big data: an iterative k-means
+searchlight for outlier detection on open health data 
+](https://github.com/JBAguinaga/ProjectTemplate/files/11022006/2018.K-means.Health.data.paper.pdf)
+
