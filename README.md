@@ -85,11 +85,11 @@
      
 * Results from *Agglomertive Clustering*:
 ![dendogram](https://user-images.githubusercontent.com/98781538/235524117-2e7faced-cfff-4d34-8202-63ae1fc01272.png)
-* Figure 4: We create a Dendogram to see how the different clustering occured from our algorithm. This helps build intuition to determine whether or not we are choosing the appropriate cluster size. Note: Linkage was set to *"average"* 
+  * Figure 4: We create a Dendogram to see how the different clustering occured from our algorithm. This helps build intuition to determine whether or not we are       choosing the appropriate cluster size. Note: Linkage was set to *"average"* 
   
     
 ![clusters](https://user-images.githubusercontent.com/98781538/235524465-a60444fe-751c-4fd1-83f7-5ee0ad3c16eb.png)
-* Figure 5: We incorporate PCA with ```n_components``` set equal to 2, so that we can plot our results.
+  * Figure 5: We incorporate PCA with ```n_components``` set equal to 2, so that we can plot our results.
 
 ### Conclusions
 
