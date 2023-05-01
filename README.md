@@ -89,8 +89,12 @@
   
     
 ![clusters](https://user-images.githubusercontent.com/98781538/235524465-a60444fe-751c-4fd1-83f7-5ee0ad3c16eb.png)
-  * Figure 5: We incorporate PCA with ```n_components``` set equal to 2, so that we can plot our results.
-
+* Figure 5: We incorporate PCA with ```n_components``` set equal to 2, so that we can plot our results.
+  
+      
+  
+     
+    
 ### Conclusions
 
 * Given that our Silhouette score was relatively low, there is still room for improvement to tweak the algorithm and/or the data preprocessing. There is also more to be potentially discovered, given that we didn't use the entire data set.
